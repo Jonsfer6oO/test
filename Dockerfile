@@ -31,4 +31,7 @@ RUN pip install --no-cache-dir -r ./server/requirements.txt
 COPY ./start.sh .
 RUN chmod +x start.sh
 
+
 ENTRYPOINT [ "./start.sh" ]
+
+EXPOSE 3000
