@@ -1,0 +1,11 @@
+**/migrations/
+**/__pycache__/
+**/*.pyc
+venv/
+.git/
+.github/
+.vscode/
+**/node_modules/
+**/instance/
+*.log
+*.pyc
