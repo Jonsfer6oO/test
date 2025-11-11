@@ -154,11 +154,6 @@ const MainPage: React.FC<MainPageProps> = ({ status, activeViewMode, onSwitchMai
             if (!socketRef.current) {
                 const newSocket = io(SOCKET_SERVER_URL, { transports: ['websocket'] });
 
-                newSocket.on('connect_error', (error) => {
-                    console.error('Ошибка подключения WebSocket:', error);
-                    toast.error("Не удалось подключиться к серверу уведомлений.");
-                });
-
                 newSocket.on('new_event_added', (data) => {
                     console.log("Socket: New event added received", data);
                     showTopNotification("Новое мероприятие!", `Добавлено: "${data.eventTitle}".`, data.eventId);
